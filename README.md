@@ -1,0 +1,2 @@
+# vinilos
+Actividad de vinilos
