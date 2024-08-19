@@ -28,12 +28,59 @@ public class ColeccionVinilos {
 
 
     }
-    public static int totalvinilos(String m[][]){
-        System.out.println(m.length);
+    public static int totalvinilos(String m[][]) {
+        int total = 0;
+        for (int i = 0; i < m.length; i++) {
+            if (m[i][0] != null) {
+                total++;
+            }
+        }
+        return total;
+    }
 
 
+    public static int agregarVinilo(String m[][],String gru, String Ip, String agno) {
+        for (int i = 0; i < m.length; i++) {
+            if (m[i][0] == null) {
+                m[i][0] = gru;
+                m[i][1] = Ip;
+                m[i][2] = agno;
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static  boolean buscarArtista(String m[][], String artista) {
+        for (int i = 0; i < m.length; i++) {
+            if (m[i][0] == null && m[i][0].equals(artista)){
+            return true;
+            }
+
+
+        }
+        System.out.println("El artista"+ artista + " si esta en la colección.");
+        return false;
 
     }
+
+    public static void mostrarColeccion(String[][] m) {
+        for (int i = 0; i < m.length; i++) {
+            if (m[i][0] == null) {
+                System.out.println("Fila" + (i+1)+ ": Artista: " + m[i][0] + "Album: " + m[i][1] + "Año: " + m[i][2]);
+            }
+        }
+
+    }
+
+    public static void mostrarTotal(String[][] m) {
+        for (int i = 0; i < m.length; i++) {
+            if (m[i][0] == null) {
+                System.out.println("Fila" + (i+1)+ ": Artista: " + m[i][0] + "Album: " + m[i][1] + "Año: " + m[i][2]);
+            }
+        }
+    }
+
 
 
 
